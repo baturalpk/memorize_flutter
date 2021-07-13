@@ -3,7 +3,7 @@ import 'package:memorize_flutter/card.model.dart';
 
 class MyCards with ChangeNotifier {
   //** Constants
-  final emojiDB = ["💋", "👠", "💄", "👅", "💦", "🍫"];
+  static const _emojiDB = ["🍕", "🍗", "🍭", "🍉", "🍇", "🍫", "🥦", "🍋"];
 
   //** Fields
   int _score = 0;
@@ -18,7 +18,7 @@ class MyCards with ChangeNotifier {
 
   //** Private Methods
   void _createTheGame() {
-    this.emojiDB.asMap().forEach((i, emoji) => {
+    MyCards._emojiDB.asMap().forEach((i, emoji) => {
           _cards.add(new EmojiCard(id: i * 2, content: emoji)),
           _cards.add(new EmojiCard(id: i * 2 + 1, content: emoji)),
         });
@@ -42,7 +42,8 @@ class MyCards with ChangeNotifier {
       final potentialMatchIndex = _indexOfTheOneAndOnlyFaceUpCard;
 
       if (!(potentialMatchIndex == -1)) {
-        if (_cards[chosenIndex].content == _cards[potentialMatchIndex].content) {
+        if (_cards[chosenIndex].content ==
+            _cards[potentialMatchIndex].content) {
           _cards[chosenIndex].setMatched = true;
           _cards[potentialMatchIndex].setMatched = true;
           _score += 2;
