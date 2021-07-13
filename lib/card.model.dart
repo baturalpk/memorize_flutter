@@ -4,9 +4,9 @@ class EmojiCard {
   late bool _isFaceUp;
   late bool _isMatched;
 
-  EmojiCard({required int? id, required String? content}) {
-    this._id = id!;
-    this._content = content!;
+  EmojiCard({required int id, required String content}) {
+    this._id = id;
+    this._content = content;
     this._isFaceUp = false;
     this._isMatched = false;
   }
@@ -14,7 +14,7 @@ class EmojiCard {
   // Getters
   int get id => this._id;
   String get content => this._content;
-  bool get isFaceUp => this._isFaceUp ;
+  bool get isFaceUp => this._isFaceUp;
   bool get isMatched => this._isMatched;
 
   // Setters
