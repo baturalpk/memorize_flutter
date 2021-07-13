@@ -58,8 +58,8 @@ class CardView extends StatelessWidget {
         child: Container(
           color: color,
           alignment: Alignment.center,
-          width: (_deviceWidth * 80 / 100 / cardCountRow) / 2,
-          height: (_deviceHeight * 80 / 100 / cardCountColumn) / 2,
+          width: (_deviceWidth * 90 / 100 / cardCountRow) / 2,
+          height: (_deviceHeight * 75 / 100 / cardCountColumn) / 2,
           child: Text(content,
               style: TextStyle(
                   fontSize: MediaQuery.of(context).size.longestSide * 2 / 100)),
